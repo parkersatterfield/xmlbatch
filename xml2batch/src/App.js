@@ -23,6 +23,9 @@ function App() {
           </div>
           <FileDrop />
         </div>
+        <div>
+          <Export />
+        </div>
       </div>
     </div>
   );

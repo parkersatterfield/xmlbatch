@@ -49,6 +49,7 @@
 
 .folder {
   color: var(--pop-color);
+  width: 25%;
 }
 
 .right {
