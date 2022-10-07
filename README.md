@@ -2,7 +2,7 @@
 ## Summary
  This application provides a web interface that allows users to upload a folder of XML files and get the SQL commands required to write their XML to a database file. The intended use case for this application is to help data teams convert XML files from a previous DB export into a SQL database. 
 
-![Animation shows "star wars" typed into a search box and books about Star Wars appearing as results.](./xml2batch/public/mockup.png)
+![mockup](./public/mockup.png)
 [XMLtoSQL.com](https://www.xmltosql.com)
 
 ---

@@ -1,8 +1,8 @@
 {
-  "name": "xml2batch",
+  "name": "XMLtoSQL",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "homepage": "https://xmltosql.com/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
