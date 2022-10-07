@@ -3,8 +3,9 @@
   --bg-color: #f0f0f0;
   --box-color: #ffffff;
   --pop-color: #431DB1;
-  --pop-color-fade: #421db152;
+  --pop-color-fade: #421db138;
   --text-color: #252525;
+  --text-color-error: rgb(121, 17, 17);
 
   background-color: var(--bg-color);
   color: var(--text-color);

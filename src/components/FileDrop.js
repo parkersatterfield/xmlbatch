@@ -11,6 +11,7 @@ const FileDrop = (props) => {
   // define progress state
   const [progress, setProgress] = useState(0);
   const [output, setOutput] = useState("");
+  const [error, setError] = useState(false);
 
   // styles
   const progressColor = "#431DB1";
@@ -39,12 +40,17 @@ const FileDrop = (props) => {
     let completedFiles = 0;
 
     acceptedFiles.forEach(file => {
+      if(file.type != "text/xml") {
+        setError(true);
+        return;
+      }
       var reader = new FileReader();
       reader.onload = function(e) {
         var contents = e.target.result;
         setOutput(output => output+=xmlManager.parseXml(contents));
       };
       reader.readAsText(file);
+      setError(false);
       completedFiles += 1;
       setProgress(completedFiles/acceptedFiles.length*100);
     });
@@ -69,6 +75,11 @@ const FileDrop = (props) => {
         <input {...getInputProps()} />
         <h5>Drop XML Files Here</h5>
       </div>
+      {error &&
+        <div className="error">
+          Invalid file type: only XML files will be accepted.
+        </div>
+      }
       <h4>Files</h4>
       <div className="flex-between">
         <p>{progress}% Uploaded</p>
