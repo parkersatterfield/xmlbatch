@@ -22,6 +22,7 @@
 }
 
 .btn {
+  font-family: Poppins;
   color: white;
   background-color: var(--pop-color);
   border: none;
@@ -100,7 +101,9 @@ lnk:active {
 .main {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-top: 50px;
+  height: 100%;
 }
 
 .file-drop {
@@ -110,6 +113,10 @@ lnk:active {
   padding: 25px;
   box-shadow: 15px;
   background-color: var(--box-color);
+}
+
+.file-drop:active {
+  background-color: red;
 }
 
 .container {
