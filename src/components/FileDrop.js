@@ -40,7 +40,7 @@ const FileDrop = (props) => {
     let completedFiles = 0;
 
     acceptedFiles.forEach(file => {
-      if(file.type != "text/xml") {
+      if(file.type !== "text/xml") {
         setError(true);
         return;
       }
