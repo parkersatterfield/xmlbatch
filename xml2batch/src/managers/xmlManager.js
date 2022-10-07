@@ -3,7 +3,7 @@ const xmlReader = require('xml-reader');
 const parseXml = function(xml) {
     const result = xmlReader.parseSync(xml);
     
-    // Create Table 
+    let output = "";
     let tableName = result.name;
     let columnNode = result.children;
     let columnNames = [];
@@ -27,7 +27,9 @@ const parseXml = function(xml) {
     // run commands on db by passing in text strings and calling function from dbOperation
     let columnNamesAndTypes = columnNames.map(i => i + " varchar(5000)");
     let createTableCommand = `CREATE TABLE ${tableName} (${columnNamesAndTypes})`
-    console.log(insertCommand);
+    
+    output+=createTableCommand+"\n"+insertCommand+"\n";
+    return output;
 }
 
 module.exports = {

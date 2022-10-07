@@ -23,4 +23,4 @@
 This will output one table named Customers with 4 columns and 2 rows.
 
 ## How to Use
-Drag and drop files into the file upload section of the interface. The backend will create a new database and parse each XML file into a table with the nodes as the column names. As of the current version (0.1.0), the datatype of each column will be VARCHAR(5000). In future versions, I hope to incorporate more appropriate types using Regex. 
+Drag and drop files into the file upload section of the interface. The program will parse each XML file into a table with the nodes as the column names and output a SQL file that can be run to create the appropriate tables. As of the current version (0.1.0), the datatype of each column will be varchar(5000). In future versions, I hope to incorporate more appropriate types using Regex. 

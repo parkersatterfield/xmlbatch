@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 .pop {
@@ -14,6 +15,12 @@
   align-items: center;
 }
 
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .btn {
   color: white;
   background-color: var(--pop-color);
@@ -23,6 +30,7 @@
   font-weight: bold;
   transition: ease-in-out 0.2s;
   font-size: 10pt;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -70,6 +78,7 @@ lnk:active {
 
 .body {
   width: 80vw;
+  min-height: 80vh;
 }
 
 .top {
@@ -111,10 +120,14 @@ lnk:active {
   color: var(--pop-color);
 }
 
-.progress {}
+.progress {
+  width: 100%;
+  color: white;
+  height: 50px;
+}
 
 .footer {
-  width: 100vw;
+  width: 100%;
   background-color: white;
 }
 
