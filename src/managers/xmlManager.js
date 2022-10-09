@@ -16,6 +16,14 @@ const parseXml = function(xml) {
                 columnNames.push(col.name);
             }
             let colValue = col.children[0].value;
+            colValue = colValue
+                .replaceAll("'", "")
+                .replaceAll("\", ")
+                .replaceAll('"', '')
+                .replaceAll('\n', "")
+                .replaceAll('  ', " ")
+                .replaceAll('  ', " ");
+            console.log(colValue);
             columnValues.push(`'${colValue}'`);
         });
         

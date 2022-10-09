@@ -80,6 +80,8 @@ lnk:active {
 .body {
   width: 80vw;
   min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
 .top {
@@ -102,17 +104,15 @@ lnk:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 50px;
-  height: 100%;
+  width: 100%;
 }
 
 .file-drop {
+  transition: ease-in-out 0.2s;
   flex-direction: column;
-  border: 1px solid var(--pop-color-fade);
-  border-radius: 20px;
-  padding: 25px;
-  box-shadow: 15px;
-  background-color: var(--box-color);
+  border: 2px dashed var(--pop-color-fade);
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .file-drop:active,
@@ -121,7 +121,12 @@ lnk:active {
 }
 
 .container {
+  border: 1px solid var(--pop-color-fade);
+  border-radius: 20px;
+  padding: 25px;
+  background-color: var(--box-color);
   width: 40%;
+  margin-bottom: 25px;
 }
 
 .folder {
@@ -151,4 +156,19 @@ lnk:active {
   border-radius: 5px;
   background-color: rgba(255, 70, 70, 0.377);
   color: var(--text-color-error);
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 780px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .container,
+  .headline {
+    width: 100%;
+  }
 }

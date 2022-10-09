@@ -1,5 +1,6 @@
 // components
 import FileDrop from './components/FileDrop'
+import Footer from './components/Footer'
 import Logo from './logo.png'
 
 // CSS
@@ -28,16 +29,7 @@ function App() {
           <FileDrop />
         </div>
       </div>
-      <footer className="footer">
-        <div className="footer-container">
-          <h5>
-            Created & Licensed by Parker Satterfield
-          </h5>
-          <h6>
-            ©️ All Rights Reserved
-          </h6>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

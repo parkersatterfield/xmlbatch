@@ -11,7 +11,7 @@ const FileDrop = (props) => {
   // define progress state
   const [progress, setProgress] = useState(0);
   const [output, setOutput] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
 
   // styles
   const progressColor = "#431DB1";
@@ -37,11 +37,12 @@ const FileDrop = (props) => {
   });
 
   const onDrop = useCallback(acceptedFiles => {
+    setError(false);
     let completedFiles = 0;
-
     acceptedFiles.forEach(file => {
       if(file.type !== "text/xml") {
         setError(true);
+        setProgress(0);
         return;
       }
       var reader = new FileReader();
@@ -50,12 +51,12 @@ const FileDrop = (props) => {
         setOutput(output => output+=xmlManager.parseXml(contents));
       };
       reader.readAsText(file);
-      setError(false);
       completedFiles += 1;
       setProgress(completedFiles/acceptedFiles.length*100);
     });
+
   }, []);
-  
+
     const blob = new Blob([output], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -66,7 +67,7 @@ const FileDrop = (props) => {
       link.click();
     }
 
-  const {getRootProps, getInputProps} = useDropzone({onDrop});
+  const {acceptedFiles, getRootProps, getInputProps} = useDropzone({onDrop});
 
   return (
     <div className="container">
@@ -80,10 +81,10 @@ const FileDrop = (props) => {
           Invalid file type: only XML files will be accepted.
         </div>
       }
-      <h4>Files</h4>
+      <h4 className="mb-0">Files {acceptedFiles.length >0 && '('+acceptedFiles.length+')'}</h4>
       <div className="flex-between">
-        <p>{progress}% Uploaded</p>
-        {progress === 100 && 
+        <h5>{progress}% Uploaded</h5>
+        {progress === 100 && !error && 
           <div className="output">
             <button className="btn" onClick={download}>Download Results</button>
           </div>
